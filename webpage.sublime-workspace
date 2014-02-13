@@ -520,18 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "assets/less/variables.less",
+			"file": "_includes/_navigation.html",
 			"settings":
 			{
-				"buffer_size": 924,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/less/600.less",
-			"settings":
-			{
-				"buffer_size": 1504,
+				"buffer_size": 902,
 				"line_ending": "Unix"
 			}
 		},
@@ -604,8 +596,12 @@
 	},
 	"file_history":
 	[
-		"/Applications/Gitter.app/Contents/Resources/www/cordova.js",
+		"/Users/michael/Downloads/google.csv",
 		"/Users/michael/Projects/7imbrook.github.io/_config.yml",
+		"/Users/michael/Projects/7imbrook.github.io/assets/less/variables.less",
+		"/Users/michael/Projects/7imbrook.github.io/assets/less/mixins.less",
+		"/Users/michael/Projects/7imbrook.github.io/assets/less/600.less",
+		"/Applications/Gitter.app/Contents/Resources/www/cordova.js",
 		"/Users/michael/Projects/7imbrook.github.io/_posts/2011-03-10-sample-post.md",
 		"/Users/michael/Projects/7imbrook.github.io/about.md",
 		"/Users/michael/Projects/7imbrook.github.io/images/texture-feature-02.jpg",
@@ -727,11 +723,7 @@
 		"/Volumes/web/web/app/controllers/admin/blocks_controller.rb",
 		"/Volumes/web/web/app/controllers/admin/pages_controller.rb",
 		"/Volumes/web/web/app/views/pages/dynamic_page.html.erb",
-		"/Volumes/web/web/app/helpers/application_helper.rb",
-		"/Volumes/web/web/app/controllers/auth_controller.rb",
-		"/Volumes/web/web/config/application.yml",
-		"/Volumes/web/web/Gemfile",
-		"/Volumes/web/web/config/environments/development.rb"
+		"/Volumes/web/web/app/helpers/application_helper.rb"
 	],
 	"find":
 	{
@@ -739,9 +731,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"<open folders>"
 		]
 	},
 	"find_state":
@@ -749,6 +742,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"#top",
+			"201, 27, 38",
+			"rgb(201, 27, 38)",
+			"background",
+			"#c91b26",
+			"c91b26",
+			"#c91b26",
 			"timestamp",
 			"'''",
 			"mute",
@@ -844,24 +844,26 @@
 			[
 				{
 					"buffer": 0,
-					"file": "assets/less/variables.less",
+					"file": "_includes/_navigation.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 924,
+						"buffer_size": 902,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								924,
-								924
+								79,
+								79
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -872,35 +874,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "assets/less/600.less",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1504,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								386,
-								389
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "_config.yml",
 					"semi_transient": false,
 					"settings":
@@ -912,8 +885,8 @@
 						"selection":
 						[
 							[
-								1068,
-								1068
+								1220,
+								1220
 							]
 						],
 						"settings":
@@ -926,7 +899,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
