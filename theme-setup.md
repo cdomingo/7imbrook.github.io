@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /theme-setup/index.html
+permalink: /theme-setup/
 title: Theme Setup
-description: "Instructions on how to install and customize the Jekyll theme HMFAYSAL V2"
+description: "Instructions on how to install and customize the Jekyll theme Minimal Mistakes."
 tags: [Jekyll, theme, responsive]
 image:
   feature: texture-feature-02.jpg
@@ -20,18 +20,28 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-General notes and suggestions for customizing HMFAYSAL V2.
+General notes and suggestions for customizing Minimal Mistakes.
 
-## Basic Setup
+## Basic Setup for a new Jekyll site
 
-1. [Install Jekyll](http://jekyllrb.com) if you haven't already.
-2. Fork the [Jekyll HMFAYSAL V2 theme repo](http://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme/)
-3. Make it your own and customize, customize, customize.
+1. [Install Bundler](http://bundler.io) `gem install bundler` and then install [Jekyll](http://jekyllrb.com) and all dependencies `bundle install`.
+2. Fork the [Minimal Mistakes repo](http://github.com/mmistakes/minimal-mistakes/fork).
+3. Clone the repo you just forked and rename it.
+4. Edit `_config.yml` to personalize your site.
+5. Check out the sample posts in `_posts` to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.
+6. Read the documentation below for further customization pointers and documentation.
 
-<a markdown="0" href="http://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme" class="btn">HMFAYSAL V2 on GitHub</a>
+<div markdown="0"><a href="https://github.com/mmistakes/minimal-mistakes/archive/master.zip" class="btn">Download the Theme</a></div>
+
+**Pro-tip:** Delete the `gh-pages` branch after cloning and start fresh by branching off `master`. There is a bunch of garbage in `gh-pages` used for the theme's demo site that I'm guessing you don't want on your site.
+{: .notice}
+
+---
+
+## Folder Structure
 
 {% highlight text %}
-Jekyll-HMFAYSAL-V2-Theme/
+minimal-mistakes/
 ├── _includes/
 |    ├── _author-bio.html  #bio stuff goes here
 |    ├── _browser-upgrade.html  #displays on IE8 and less
@@ -42,20 +52,20 @@ Jekyll-HMFAYSAL-V2-Theme/
 ├── _layouts/
 |    ├── home.html  #homepage layout
 |    ├── page.html  #page layout
-|    ├── post-index.html  #post listing layout
+|    ├── post-index.html  #post index layout
 |    └── post.html  #post layout
 ├── _posts/
 ├── assets/
 |    ├── css/  #preprocessed less styles
 |    ├── fonts/  #icon webfonts
 |    ├── js/
-|    |   ├── _main.js, main.js, modernizr.js #Main JavaScript file, plugin settings, etc
+|    |   ├── _main.js  #Main JavaScript file, plugin settings, etc
 |    |   ├── plugins  #jQuery plugins
-|    |   └── vendor/  #jQuery
+|    |   └── vendor/  #jQuery and Modernizr
 |    └── less/
 ├── images/  # images for posts and pages
 ├── about.md  # about page
-├── articles.md  # lists all posts from latest to oldest
+├── posts.md  # lists all posts from latest to oldest
 └── index.md  # homepage. lists 5 most recent posts
 {% endhighlight %}
 
@@ -69,7 +79,7 @@ Most of the variables found here are used in the .html files found in `_includes
 
 #### Owner/Author Information
 
-Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you'll need to edit the path in `_author-bio.html` since it assumes it is located in `\images`.
+Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you'll need to edit the path in `_author-bio.html` since it assumes it is located in `/images`.
 
 Including a link to your Google+ profile has the added benefit of displaying [Google Authorship](https://plus.google.com/authorship) in Google search results if you've went ahead and applied for it. Don't have a Google+ account? Just leave it blank.
 
@@ -84,24 +94,32 @@ Edit page/post titles and URLs to include in the site's navigation. For external
 {% highlight yaml %}
 # sample top navigation links
 links:
-  - title: Home
-    url: /
-  - title: About
+  - title: About Page
     url: /about/
-  - title: Articles
-    url: /articles/
-  - title: Setup
-    url: /theme-setup/
-  - title: T-Details
-    url: /technical-details/
-  - title: The Evil-Genius
-    url: http://www.theevilgenius.tk/
+  - title: Posts
+    url: /posts/
+  - title: Other Page
+    url: /other-page/
+  - title: External Page
+    url: http://mademistakes.com
     external: true
 {% endhighlight %}
 
 ### Adding Posts and Pages
 
-There are two main content layouts: *post.html* (for posts) and *page.html* (for pages). Both have large **feature images** that span the full-width of the screen, and both are meant for text heavy blog posts (or articles). 
+There are two main content layouts: *post.html* (for posts) and *page.html* (for pages). Both have large **feature images** that span the full-width of the screen, and both are meant for long form articles and blog posts.
+
+There are two rake tasks that can be used to create a new post or page with all YAML Front Matter. Using either `rake new_post` or `rake new_page` will prompt you for a title and tags to classify them. Example below:
+
+{% highlight bash %}
+rake new_post
+
+Enter a title for your post: My Awesome Post
+Enter tags to classify your post (comma separated): web development, code
+Creating new post: _posts/2014-02-10-my-awesome-post.md
+{% endhighlight %}
+
+There are a few configuration variables that can be changed in `Rakefile.rb`. By default posts and pages will be created in MarkDown using the `.md` extension.
 
 #### Feature Images
 
@@ -121,8 +139,21 @@ If you want to apply attribution to a feature image use the following YAML front
 image:
   feature: feature-image-filename.jpg
   credit: Michael Rose #name of the person or site you want to credit
-  creditlink: http://www.theevilgenius.tk #url to their site or licensing
+  creditlink: http://mademistakes.com #url to their site or licensing
 {% endhighlight %}
+
+#### Post Index Page
+
+A [sample index page]({{ site.url }}/posts/) listing all posts grouped by the year they were published has been provided. The name can be customized to your liking by editing a few references. For example, to change **Posts** to **Writing** update the following:
+
+* In `_config.yml` under `links:` rename the title and URL to the following:
+{% highlight yaml %}
+  links:
+  - title: Writing
+    url: /writing/
+{% endhighlight %}
+* Rename `posts.md` to `writing.md` and update the YAML front matter to match the title and URL set in `_config.yml`
+* Update the **View all posts** link in `post.html` layout found in `_layouts` to match title and URL set previously.
 
 #### Thumbnails for OG and Twitter Cards
 
@@ -175,7 +206,7 @@ And if the command line isn't your thing (you're using Jekyll so it probably is)
 
 ## Questions?
 
-Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@hmfaysal](http://twitter.com/hmfaysal) or [file a GitHub Issue](https://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme/issues/new). And if you make something cool with this theme feel free to let me know.
+Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@mmistakes](http://twitter.com/mmistakes) or [file a GitHub Issue](https://github.com/mmistakes/minima-mistakes/issues/new). And if you make something cool with this theme feel free to let me know.
 
 ---
 
@@ -184,6 +215,6 @@ Having a problem getting something to work or want to know why I setup something
 This theme is free and open source software, distributed under the [GNU General Public License]({{ site.url }}/LICENSE) version 2 or later. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer. 
 
 
-[^1]: Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for canonical urls in `_head.html`. Don't include a trailing `/` in your base url ie: `http://www.theevilgenius.tk`. When developing locally remove or comment out this line so local .css, .js, and images are used.
+[^1]: Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for canonical urls in `_head.html`. Don't include a trailing `/` in your base url ie: `http://mademistakes.com`. When developing locally remove or comment out this line so local .css, .js, and images are used.
 
 [^2]: If you're using GitHub Pages to host your site be aware that plugins are disabled. So you'll need to build your site locally and then manually deploy if you want to use this sweet plugin.

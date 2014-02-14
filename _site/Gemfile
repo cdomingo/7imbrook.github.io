@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'jekyll-minibundle'
+gem 'redcarpet'
 gem 'coderay'
 gem 'rake'
-gem 'redcarpet'
+gem 'activesupport'
+gem 'stringex'

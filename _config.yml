@@ -1,24 +1,29 @@
-title:            Michael Timbrook
-tagline:          Native and webapp don't go in the same sentance
-description:      Software Engineering major at Rochester Institute of Technology
+title:            7imbrook
+tagline:          Objective-c Lover
+description:      Where I talk about why objective-c is awesome and add my contibutions to the community.
 # Your site's domain goes here. Leave localhost server or blank when working locally.
-# url:              https://timbrook.im
+url:              
 
 # Owner/author information
 owner:
-  name:           Michael Timbrook
-  avatar:         http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=400
-  bio:            ""
+  name:           Michael
+  avatar:         http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200
+  bio:            "A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community."
   email:          timbrook480@gmail.com
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  # To register at HMFAYSAL SOCIAL, visit http://social.hmfaysal.tk
-  twitter:        7imbrook
-  github:         7imbrook
-  linkedin:       michaeltimbrook
+  twitter: 7imbrook        
+  facebook: 
+  github: 7imbrook      
+  linkedin:     
+  instagram: 7imbrook      
+  lastfm:         
+  tumblr:           
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   UA-37560133-1
-google_verify:            
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:        
 
 # Links to include in top navigation
 # For external links add external: true
@@ -27,8 +32,8 @@ links:
     url: /
   - title: About
     url: /about/
-  - title: Articles
-    url: /articles/
+  - title: Posts
+    url: /posts/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
@@ -37,7 +42,7 @@ pygments:    true
 markdown:    redcarpet
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
+permalink:   /:categories/:title/
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

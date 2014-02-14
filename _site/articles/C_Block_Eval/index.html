@@ -1,0 +1,190 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>C Block Evaluation &#8211; 7imbrook</title>
+<meta name="description" content="I'm gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I've seen when someone is updating a frame on a view.">
+<meta name="keywords" content="welcome, objective-c, shortcuts, style">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/images/texture-feature-04.jpg">
+
+<meta name="twitter:title" content="C Block Evaluation">
+<meta name="twitter:description" content="I'm gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I've seen when someone is updating a frame on a view.">
+<meta name="twitter:creator" content="@7imbrook">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C Block Evaluation">
+<meta property="og:description" content="I'm gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I've seen when someone is updating a frame on a view.">
+<meta property="og:url" content="/articles/C_Block_Eval/">
+<meta property="og:site_name" content="7imbrook">
+
+
+
+
+
+<link rel="canonical" href="/articles/C_Block_Eval/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="7imbrook Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">7imbrook</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation">
+		    <ul>
+		        
+				<li><a href="/" >Home</a></li>
+		        
+				<li><a href="/about/" >About</a></li>
+		        
+				<li><a href="/posts/" >Posts</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+<div class="image-wrap">
+  <img src="/images/texture-feature-04.jpg" alt="C Block Evaluation feature image">
+  <span class="image-credit">Photo Credit: <a href="http://texturelovers.com">Texture Lovers</a></span>
+</div><!-- /.image-wrap -->
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200" class="bio-photo" alt="Michael bio photo"></a>
+<h3>Michael</h3>
+<p>A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community.</p>
+<a href="http://twitter.com/7imbrook" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+
+<a href="http://instagram.com/7imbrook" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/7imbrook" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article>
+    <div class="headline-wrap">
+      <h1>C Block Evaluation</h1>
+      <h2>The shorthand and techniques I use to be a great cocoa developer.</h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>I&#39;m gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I&#39;ve seen when someone is updating a frame on a view.</p>
+<div class="highlight"><pre><code class="objective-c language-objective-c" data-lang="objective-c"><span class="p">...</span>
+<span class="n">CGFrame</span> <span class="n">newFrame</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="n">frame</span><span class="p">;</span>
+<span class="n">newFrame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="n">newFrame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">button</span> <span class="n">setFrame</span><span class="o">:</span><span class="n">newFrame</span><span class="p">];</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>To anyone this is a perfectly sane way of doing this. It’s not the only one, you could use <code>CGRectOffset</code> if you are moving a view but if you know exactly where to put it you might as well set it. But this reads backward. The new frame is set up and then at the end you set it. At the end of these lines you figure out what they did and when there’s code around it is hard to figure out what code goes to what. What we’re allowed to do with the GCC C Block Evaluation is return code surrounded by <code>({ … })</code>. This will execute whatever is inside here and return the last line. Now take a look at this.</p>
+<div class="highlight"><pre><code class="objective-c language-objective-c" data-lang="objective-c"><span class="p">...</span>
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">button</span> <span class="n">setFrame</span><span class="o">:</span><span class="p">({</span>
+    <span class="n">CGFrame</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">button</span><span class="p">.</span><span class="n">frame</span><span class="p">;</span>
+    <span class="n">frame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+    <span class="n">frame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+    <span class="n">frame</span><span class="p">;</span>
+<span class="p">})];</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>This now becomes much more readable. All the configuration for an object can be encapsulated inside this code block and before you even get to the block you know what it’s going to do. It also then exists in it’s own scope, which is nice because you don’t need unique variable names like <code>newButtonFrame</code> and <code>newButton2Frame</code>, overall this can really clean up your code.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200" class="bio-photo" alt="Michael bio photo"></a>
+<h3>Michael</h3>
+<p>A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community.</p>
+<a href="http://twitter.com/7imbrook" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+
+<a href="http://instagram.com/7imbrook" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/7imbrook" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>C Block Evaluation</strong> was published on <time datetime="2014-02-15T00:00:00-05:00">February 15, 2014</time> by <a href="/about" title="About Michael">Michael</a>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/Welcome-to-my-site/" title="Welcome to my blog">Welcome to my blog</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2014 Michael. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+	        
+
+</body>
+</html>

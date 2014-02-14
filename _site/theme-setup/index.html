@@ -5,31 +5,31 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Theme Setup &#8211; Michael Timbrook</title>
-<meta name="description" content="Instructions on how to install and customize the Jekyll theme HMFAYSAL V2">
+<title>Theme Setup &#8211; 7imbrook</title>
+<meta name="description" content="Instructions on how to install and customize the Jekyll theme Minimal Mistakes.">
 <meta name="keywords" content="Jekyll, theme, responsive">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="/images/texture-feature-02.jpg">
 
 <meta name="twitter:title" content="Theme Setup">
-<meta name="twitter:description" content="Instructions on how to install and customize the Jekyll theme HMFAYSAL V2">
+<meta name="twitter:description" content="Instructions on how to install and customize the Jekyll theme Minimal Mistakes.">
 <meta name="twitter:creator" content="@7imbrook">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Theme Setup">
-<meta property="og:description" content="Instructions on how to install and customize the Jekyll theme HMFAYSAL V2">
-<meta property="og:url" content="/theme-setup/index.html">
-<meta property="og:site_name" content="Michael Timbrook">
+<meta property="og:description" content="Instructions on how to install and customize the Jekyll theme Minimal Mistakes.">
+<meta property="og:url" content="/theme-setup/">
+<meta property="og:site_name" content="7imbrook">
 
 
 
 
 
 <link rel="canonical" href="/theme-setup/">
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Michael Timbrook Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="7imbrook Feed">
 
 
 <!-- http://t.co/dKP3o1e -->
@@ -49,8 +49,7 @@
 <meta http-equiv="cleartype" content="on">
 
 <!-- Load Modernizr -->
-
-<script src="/assets/js/modernizr.js"></script>
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
 
 <!-- Icons -->
 <!-- 16x16 -->
@@ -68,28 +67,52 @@
 
 </head>
 
-<body class="page" itemscope itemtype="http://schema.org/WebPage">
+<body class="page">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
-<div id="main" role="main"  itemprop="mainContentOfPage">
-  <div class="article-author-side">
-    <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=400" class="bio-photo" alt="Michael Timbrook bio photo"></a>
-<h3>Michael Timbrook</h3>
-<p></p>
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">7imbrook</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation">
+		    <ul>
+		        
+				<li><a href="/" >Home</a></li>
+		        
+				<li><a href="/about/" >About</a></li>
+		        
+				<li><a href="/posts/" >Posts</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
 
+<div class="image-wrap">
+  <img src="/images/texture-feature-02.jpg" alt="Theme Setup feature image">
+  <span class="image-credit">Photo Credit: <a href="http://texturelovers.com">Texture Lovers</a></span>
+</div><!-- /.image-wrap -->
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200" class="bio-photo" alt="Michael bio photo"></a>
+<h3>Michael</h3>
+<p>A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community.</p>
 <a href="http://twitter.com/7imbrook" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
 
 
-<a href="http://linkedin.com/in/michaeltimbrook" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
 
+<a href="http://instagram.com/7imbrook" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
 <a href="http://github.com/7imbrook" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
 
 
   </div>
-  <article itemscope itemtype="http://schema.org/CreativeWork">
-    <h1 itemprop="name">Theme Setup</h1>
-    <div class="article-wrap" itemprop="text">
+  <article>
+    <h1>Theme Setup</h1>
+    <div class="article-wrap">
       <p><section id="table-of-contents" class="toc">
   <header>
     <h3 >Contents</h3>
@@ -100,19 +123,29 @@
 </div>
 </section>&lt;!-- /#table-of-contents --&gt;</p>
 
-<p>General notes and suggestions for customizing HMFAYSAL V2.</p>
+<p>General notes and suggestions for customizing Minimal Mistakes.</p>
 
-<h2>Basic Setup</h2>
+<h2>Basic Setup for a new Jekyll site</h2>
 
 <ol>
-<li><a href="http://jekyllrb.com">Install Jekyll</a> if you haven&#39;t already.</li>
-<li>Fork the <a href="http://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme/">Jekyll HMFAYSAL V2 theme repo</a></li>
-<li>Make it your own and customize, customize, customize.</li>
+<li><a href="http://bundler.io">Install Bundler</a> <code>gem install bundler</code> and then install <a href="http://jekyllrb.com">Jekyll</a> and all dependencies <code>bundle install</code>.</li>
+<li>Fork the <a href="http://github.com/mmistakes/minimal-mistakes/fork">Minimal Mistakes repo</a>.</li>
+<li>Clone the repo you just forked and rename it.</li>
+<li>Edit <code>_config.yml</code> to personalize your site.</li>
+<li>Check out the sample posts in <code>_posts</code> to see examples for pulling in large feature images, assigning categories and tags, and other YAML data.</li>
+<li>Read the documentation below for further customization pointers and documentation.</li>
 </ol>
 
-<p><a markdown="0" href="http://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme" class="btn">HMFAYSAL V2 on GitHub</a></p>
+<div markdown="0"><a href="https://github.com/mmistakes/minimal-mistakes/archive/master.zip" class="btn">Download the Theme</a></div>
 
-<div class="highlight"><pre><code class="text">Jekyll-HMFAYSAL-V2-Theme/
+<p><strong>Pro-tip:</strong> Delete the <code>gh-pages</code> branch after cloning and start fresh by branching off <code>master</code>. There is a bunch of garbage in <code>gh-pages</code> used for the theme&#39;s demo site that I&#39;m guessing you don&#39;t want on your site.
+{: .notice}</p>
+
+<hr>
+
+<h2>Folder Structure</h2>
+
+<div class="highlight"><pre><code class="text">minimal-mistakes/
 ├── _includes/
 |    ├── _author-bio.html  #bio stuff goes here
 |    ├── _browser-upgrade.html  #displays on IE8 and less
@@ -123,20 +156,20 @@
 ├── _layouts/
 |    ├── home.html  #homepage layout
 |    ├── page.html  #page layout
-|    ├── post-index.html  #post listing layout
+|    ├── post-index.html  #post index layout
 |    └── post.html  #post layout
 ├── _posts/
 ├── assets/
 |    ├── css/  #preprocessed less styles
 |    ├── fonts/  #icon webfonts
 |    ├── js/
-|    |   ├── _main.js, main.js, modernizr.js #Main JavaScript file, plugin settings, etc
+|    |   ├── _main.js  #Main JavaScript file, plugin settings, etc
 |    |   ├── plugins  #jQuery plugins
-|    |   └── vendor/  #jQuery
+|    |   └── vendor/  #jQuery and Modernizr
 |    └── less/
 ├── images/  # images for posts and pages
 ├── about.md  # about page
-├── articles.md  # lists all posts from latest to oldest
+├── posts.md  # lists all posts from latest to oldest
 └── index.md  # homepage. lists 5 most recent posts
 </code></pre></div>
 
@@ -150,7 +183,7 @@
 
 <h4>Owner/Author Information</h4>
 
-<p>Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you&#39;ll need to edit the path in <code>_author-bio.html</code> since it assumes it is located in <code>\images</code>.</p>
+<p>Change your name, bio, and avatar photo (100x100 pixels or larger), Twitter url, email, and Google+ url. If you want to link to an external image on Gravatar or something similiar you&#39;ll need to edit the path in <code>_author-bio.html</code> since it assumes it is located in <code>/images</code>.</p>
 
 <p>Including a link to your Google+ profile has the added benefit of displaying <a href="https://plus.google.com/authorship">Google Authorship</a> in Google search results if you&#39;ve went ahead and applied for it. Don&#39;t have a Google+ account? Just leave it blank.</p>
 
@@ -164,24 +197,31 @@
 
 <div class="highlight"><pre><code class="yaml"><span class="c1"># sample top navigation links</span>
 <span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Home</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">About</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">About Page</span>
     <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/about/</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Articles</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/articles/</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Setup</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/theme-setup/</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">T-Details</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/technical-details/</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">The Evil-Genius</span>
-    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://www.theevilgenius.tk/</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Posts</span>
+    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/posts/</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Other Page</span>
+    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/other-page/</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">External Page</span>
+    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://mademistakes.com</span>
     <span class="l-Scalar-Plain">external</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
 </code></pre></div>
 
 <h3>Adding Posts and Pages</h3>
 
-<p>There are two main content layouts: <em>post.html</em> (for posts) and <em>page.html</em> (for pages). Both have large <strong>feature images</strong> that span the full-width of the screen, and both are meant for text heavy blog posts (or articles). </p>
+<p>There are two main content layouts: <em>post.html</em> (for posts) and <em>page.html</em> (for pages). Both have large <strong>feature images</strong> that span the full-width of the screen, and both are meant for long form articles and blog posts.</p>
+
+<p>There are two rake tasks that can be used to create a new post or page with all YAML Front Matter. Using either <code>rake new_post</code> or <code>rake new_page</code> will prompt you for a title and tags to classify them. Example below:</p>
+
+<div class="highlight"><pre><code class="bash">rake new_post
+
+Enter a title <span class="k">for </span>your post: My Awesome Post
+Enter tags to classify your post <span class="o">(</span>comma separated<span class="o">)</span>: web development, code
+Creating new post: _posts/2014-02-10-my-awesome-post.md
+</code></pre></div>
+
+<p>There are a few configuration variables that can be changed in <code>Rakefile.rb</code>. By default posts and pages will be created in MarkDown using the <code>.md</code> extension.</p>
 
 <h4>Feature Images</h4>
 
@@ -199,8 +239,26 @@
 <div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">feature</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">feature-image-filename.jpg</span>
   <span class="l-Scalar-Plain">credit</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Michael Rose</span> <span class="c1">#name of the person or site you want to credit</span>
-  <span class="l-Scalar-Plain">creditlink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://www.theevilgenius.tk</span> <span class="c1">#url to their site or licensing</span>
+  <span class="l-Scalar-Plain">creditlink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://mademistakes.com</span> <span class="c1">#url to their site or licensing</span>
 </code></pre></div>
+
+<h4>Post Index Page</h4>
+
+<p>A <a href="/posts/">sample index page</a> listing all posts grouped by the year they were published has been provided. The name can be customized to your liking by editing a few references. For example, to change <strong>Posts</strong> to <strong>Writing</strong> update the following:</p>
+
+<ul>
+<li>In <code>_config.yml</code> under <code>links:</code> rename the title and URL to the following:</li>
+</ul>
+
+<div class="highlight"><pre><code class="yaml">  <span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Writing</span>
+    <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/writing/</span>
+</code></pre></div>
+
+<ul>
+<li>Rename <code>posts.md</code> to <code>writing.md</code> and update the YAML front matter to match the title and URL set in <code>_config.yml</code></li>
+<li>Update the <strong>View all posts</strong> link in <code>post.html</code> layout found in <code>_layouts</code> to match title and URL set previously.</li>
+</ul>
 
 <h4>Thumbnails for OG and Twitter Cards</h4>
 
@@ -250,7 +308,7 @@
 
 <h2>Questions?</h2>
 
-<p>Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter <a href="http://twitter.com/hmfaysal">@hmfaysal</a> or <a href="https://github.com/hmfaysal/Jekyll-HMFAYSAL-V2-Theme/issues/new">file a GitHub Issue</a>. And if you make something cool with this theme feel free to let me know.</p>
+<p>Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter <a href="http://twitter.com/mmistakes">@mmistakes</a> or <a href="https://github.com/mmistakes/minima-mistakes/issues/new">file a GitHub Issue</a>. And if you make something cool with this theme feel free to let me know.</p>
 
 <hr>
 
@@ -258,7 +316,7 @@
 
 <p>This theme is free and open source software, distributed under the <a href="/LICENSE">GNU General Public License</a> version 2 or later. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer. </p>
 
-<p>[^1]: Used to generate absolute urls in <code>sitemap.xml</code>, <code>feed.xml</code>, and for canonical urls in <code>_head.html</code>. Don&#39;t include a trailing <code>/</code> in your base url ie: <code>http://www.theevilgenius.tk</code>. When developing locally remove or comment out this line so local .css, .js, and images are used.</p>
+<p>[^1]: Used to generate absolute urls in <code>sitemap.xml</code>, <code>feed.xml</code>, and for canonical urls in <code>_head.html</code>. Don&#39;t include a trailing <code>/</code> in your base url ie: <code>http://mademistakes.com</code>. When developing locally remove or comment out this line so local .css, .js, and images are used.</p>
 
 <p>[^2]: If you&#39;re using GitHub Pages to host your site be aware that plugins are disabled. So you&#39;ll need to build your site locally and then manually deploy if you want to use this sweet plugin.</p>
 
@@ -268,7 +326,7 @@
 
 <div class="footer-wrap">
   <footer>
-    <span>&copy; 2014 Michael Timbrook. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://www.theevilgenius.tk/">HMFAYSAL V2</a> theme.</span>
+    <span>&copy; 2014 Michael. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
@@ -276,23 +334,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="/assets/js/scripts.min.js"></script>
-<script src="/assets/js/main.js"></script>
-
-<!-- Asynchronous Google Analytics snippet -->
-<script>
-  var _gaq = _gaq || [];
-  var pluginUrl = 
- '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-  _gaq.push(['_setAccount', 'UA-37560133-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
           
 
 </body>
