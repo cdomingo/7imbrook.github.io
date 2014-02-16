@@ -3,26 +3,26 @@
 <title type="text">7imbrook</title>
 <subtitle type="text">Objective-c Lover</subtitle>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="timbrook.im/feed.xml" />
-<link rel="alternate" type="text/html" href="timbrook.im" />
-<updated>2014-02-15T21:43:20-05:00</updated>
-<id>timbrook.im/</id>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2014-02-15T21:51:25-05:00</updated>
+<id>/</id>
 <author>
   <name>Michael</name>
-  <uri>timbrook.im/</uri>
+  <uri>/</uri>
   <email>timbrook480@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[C Block Evaluation]]></title>
-  <link rel="alternate" type="text/html" href="timbrook.im/articles/C_Block_Eval/" />
-  <id>timbrook.im/articles/C_Block_Eval</id>
+  <link rel="alternate" type="text/html" href="/articles/C_Block_Eval/" />
+  <id>/articles/C_Block_Eval</id>
   <published>2014-02-15T00:00:00-05:00</published>
   <updated>2014-02-15T00:00:00-05:00</updated>
   <author>
     <name>Michael</name>
-    <uri>timbrook.im</uri>
+    <uri></uri>
     <email>timbrook480@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;I&amp;#39;m gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I&amp;#39;ve seen when someone is updating a frame on a view.&lt;/p&gt;
@@ -45,24 +45,24 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This now becomes much more readable. All the configuration for an object can be encapsulated inside this code block and before you even get to the block you know what it’s going to do. It also then exists in it’s own scope, which is nice because you don’t need unique variable names like &lt;code&gt;newButtonFrame&lt;/code&gt; and &lt;code&gt;newButton2Frame&lt;/code&gt;, overall this can really clean up your code.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;timbrook.im/articles/C_Block_Eval/&quot;&gt;C Block Evaluation&lt;/a&gt; was originally published by Michael at &lt;a href=&quot;timbrook.im&quot;&gt;7imbrook&lt;/a&gt; on February 15, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/C_Block_Eval/&quot;&gt;C Block Evaluation&lt;/a&gt; was originally published by Michael at &lt;a href=&quot;&quot;&gt;7imbrook&lt;/a&gt; on February 15, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Welcome to my blog]]></title>
-  <link rel="alternate" type="text/html" href="timbrook.im/articles/Welcome-to-my-site/" />
-  <id>timbrook.im/articles/Welcome-to-my-site</id>
+  <link rel="alternate" type="text/html" href="/articles/Welcome-to-my-site/" />
+  <id>/articles/Welcome-to-my-site</id>
   <published>2014-02-14T00:00:00-05:00</published>
   <updated>2014-02-14T00:00:00-05:00</updated>
   <author>
     <name>Michael</name>
-    <uri>timbrook.im</uri>
+    <uri></uri>
     <email>timbrook480@gmail.com</email>
   </author>
   <content type="html">&lt;p&gt;As an avid objective-c developer I have become accustomed to the ways of the smalltalk style object system and the power of the runtime. For the past three years I’ve learned something new every week I’ve spent nose deep into projects. Everything from powerful language features to simple shortcuts, code style, and documentation. Techniques for working with teams and how to keep your teammates sanity in check. I want to share with you how I work.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;timbrook.im/articles/Welcome-to-my-site/&quot;&gt;Welcome to my blog&lt;/a&gt; was originally published by Michael at &lt;a href=&quot;timbrook.im&quot;&gt;7imbrook&lt;/a&gt; on February 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;/articles/Welcome-to-my-site/&quot;&gt;Welcome to my blog&lt;/a&gt; was originally published by Michael at &lt;a href=&quot;&quot;&gt;7imbrook&lt;/a&gt; on February 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 </feed>
