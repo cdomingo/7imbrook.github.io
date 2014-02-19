@@ -5,13 +5,34 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2014-02-15T21:51:25-05:00</updated>
+<updated>2014-02-18T22:27:35-05:00</updated>
 <id>/</id>
 <author>
   <name>Michael</name>
   <uri>/</uri>
   <email>timbrook480@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Upcoming [ Objective-C ] Talk]]></title>
+  <link rel="alternate" type="text/html" href="/articles/Upcoming_talk/" />
+  <id>/articles/Upcoming_talk</id>
+  <published>2014-02-18T00:00:00-05:00</published>
+  <updated>2014-02-18T00:00:00-05:00</updated>
+  <author>
+    <name>Michael</name>
+    <uri></uri>
+    <email>timbrook480@gmail.com</email>
+  </author>
+  <content type="html">&lt;p&gt;In about a month I will be giving a talk on [ Objective-c ] for the &lt;a href=&quot;http://sse.se.rit.edu&quot;&gt;Society of Software Engineers&lt;/a&gt;. I don&amp;#39;t have a set domain for my talk yet so I want some ideas! &lt;a href=&quot;http://twitter.com/7imbrook&quot;&gt;Tweet&lt;/a&gt; me with &lt;a href=&quot;https://twitter.com/search?q=%23objcsse&quot;&gt;#objcsse&lt;/a&gt; or send and email to &lt;a href=&quot;mailto:timbrook480@gmail.com?subject=RE:SSETalk&quot;&gt;timbrook480@gmail.com&lt;/a&gt; with your ideas. It&amp;#39;s not gonna be a beginner talk and I&amp;#39;d like to get into some advanced topics along with fun gems and obscure topics. If there&amp;#39;s anything you want to know more about let me know. Thanks!&lt;/p&gt;
+
+&lt;h6&gt;Updated 10:26 PM Feb 18 2014:&lt;/h6&gt;
+
+&lt;p&gt;I&amp;#39;ve decided on a title for my talk. (See cover)&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;/articles/Upcoming_talk/&quot;&gt;Upcoming [ Objective-C ] Talk&lt;/a&gt; was originally published by Michael at &lt;a href=&quot;&quot;&gt;7imbrook&lt;/a&gt; on February 18, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

@@ -4,7 +4,7 @@ title: "C Block Evaluation"
 tagline: "The shorthand and techniques I use to be a great cocoa developer."
 description: "I'm gonna make my first post about style and readablity, and a gcc c extension called block evaluation. Now supported by clang due to the teams forward effort to support all of the features found in gcc. This is one of my favorite discoveries however minor it may seem. This is what I've seen when someone is updating a frame on a view."
 category: articles
-tags: [welcome, objective-c, shortcuts, style]
+tags: [objective-c, shortcuts, style]
 image:
   feature: texture-feature-04.jpg
   credit: Texture Lovers
