@@ -1,0 +1,285 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>How simple a bug can be. &#8211; 7imbrook</title>
+<meta name="description" content="Apple recently released a security patch that raised some concerns. What was it and what does this mean for you.">
+<meta name="keywords" content="bug, apple, ssl, security">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/images/cover_secuity.jpg">
+
+<meta name="twitter:title" content="How simple a bug can be.">
+<meta name="twitter:description" content="Apple recently released a security patch that raised some concerns. What was it and what does this mean for you.">
+<meta name="twitter:creator" content="@7imbrook">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How simple a bug can be.">
+<meta property="og:description" content="Apple recently released a security patch that raised some concerns. What was it and what does this mean for you.">
+<meta property="og:url" content="/articles/Apple_SSL_Bug/">
+<meta property="og:site_name" content="7imbrook">
+
+
+
+
+
+<link rel="canonical" href="/articles/Apple_SSL_Bug/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="7imbrook Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="">7imbrook</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation">
+		    <ul>
+		        
+				<li><a href="/" >Home</a></li>
+		        
+				<li><a href="/about/" >About</a></li>
+		        
+				<li><a href="/posts/" >Posts</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+<div class="image-wrap">
+  <img src="/images/cover_secuity.jpg" alt="How simple a bug can be. feature image">
+  <span class="image-credit">Photo Credit: <a href="http://timbrook.im">Michael Timbrook | Apple Inc</a></span>
+</div><!-- /.image-wrap -->
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200" class="bio-photo" alt="Michael bio photo"></a>
+<h3>Michael</h3>
+<p>A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community. I also really love coffee.</p>
+<a href="http://twitter.com/7imbrook" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+
+<a href="http://instagram.com/7imbrook" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/7imbrook" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+  </div>
+  <article>
+    <div class="headline-wrap">
+      <h1>How simple a bug can be.</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <div class="highlight"><pre><code class="cpp language-cpp" data-lang="cpp"><span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+</code></pre></div>
+<p>I&#39;m sure you&#39;ve all heard by now that Apple released a security update to iOS 7 (7.0.6) addressing an issue with SSL certificate validation in the Security framework. If you haven’t updated your software, do so now. OS X Mavericks got it’s update today (Feb 25). This vulnerability puts all information sent from your machine at risk to man in the middle attacks. The security information can be found <a href="http://support.apple.com/kb/HT6147">here</a>.</p>
+
+<blockquote>
+<p>What&#39;s Wrong?</p>
+</blockquote>
+
+<p>The bug discovered affects the verification process of public keys used to encrypt information. The final step is skipped at can not return it’s error if a key is invalid. If you are unfamiliar with how public private key pairs work, here’s a quick run down. Your private key is used to decrypt data encrypted by it’s paired public key. Simple, but how do you know that the public key you are using isn’t some random key that someone in the middle has the private key for? This is why we have Certificate Authorities, or CA’s. CA’s are trusted “people” that sign public keys. Signing a key identifies it as an authentic, unmodified key that the private key is only owned by the public key distributor. Anyone can become a CA, but becoming trusted by a wide number of companies is difficult. This creates a trust that the data we are encrypting can only be read by the one’s we intend it for.</p>
+
+<blockquote>
+<p>Ok, but is my data still being encrypted?</p>
+</blockquote>
+
+<p>The short answer yes, the truth behind that answer, it’s encrypted but you don’t know who can decrypt it. So what happened? Like I mentioned earlier the last step in the key verification process is being skipped. Here’s the code responsible for the bug. There’s an extra goto that skips the last step of the process.</p>
+<div class="highlight"><pre><code class="cpp language-cpp" data-lang="cpp"><span class="p">...</span>
+ <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">SSLFreeBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">ReadyHash</span><span class="p">(</span><span class="o">&amp;</span><span class="n">SSLHashSHA1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">SSLHashSHA1</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">clientRandom</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">SSLHashSHA1</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">serverRandom</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">SSLHashSHA1</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">signedParams</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">SSLHashSHA1</span><span class="p">.</span><span class="n">final</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hashOut</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">goto</span> <span class="n">fail</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nl">fail:</span>
+    <span class="n">SSLFreeBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">signedHashes</span><span class="p">);</span>
+    <span class="n">SSLFreeBuffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hashCtx</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+</code></pre></div>
+<p>The full source can be found over <a href="http://opensource.apple.com/source/Security/Security-55471/libsecurity_ssl/lib/sslKeyExchange.c">here</a></p>
+
+<p>First impressions of this code might be “Are those goto’s?” and yes they are. I’ve always strayed away from the use of goto’s in code, mainly because they can be unsafe. That’s why when people ask me about goto’s, I go straight to no. Or maybe I’ll check a condition first and see if this is really a good way of doing this. Truth is, this is an efficient way of handling this. It propagates the error code up through the return. It’s common practice in C to have functions return their error codes and almost every call is checked to make sure it didn’t error. For the simple case this can look like this.</p>
+<div class="highlight"><pre><code class="cpp language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">err</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">myFunction</span><span class="p">(</span><span class="n">params</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ok so if the function returns an error we return that error, simple. Now look at this case.</p>
+<div class="highlight"><pre><code class="cpp language-cpp" data-lang="cpp"><span class="n">MyStruct</span> <span class="o">*</span><span class="n">obj</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">MyStruct</span><span class="p">));</span>
+<span class="kt">int</span> <span class="n">err</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">opperationOne</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">opperationTwo</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">err</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div>
+<p>We still want to propagate the right error, but now we need to do some memory cleanup before we do so. This example is simple but you can see when this expands that it would be cumbersome to keep track of all the clean up. Thats where this goto pattern for errors comes in.</p>
+<div class="highlight"><pre><code class="cpp language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">function</span><span class="p">(...)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">err</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">_operation1</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dataBlock</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">_operation2</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dataBlock</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">_operation3</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dataBlock</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+    <span class="p">...</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">err</span> <span class="o">=</span> <span class="n">_operationN</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dataBlock</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+
+<span class="nl">error:</span>
+    <span class="n">freeBlock</span><span class="p">(</span><span class="n">dataBlock</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">error</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre></div>
+<p>If execution flows perfectly through the function then the return is 0 and the necessary memory cleanup has been done. I prefer to do the inline way because it’s more readable and less prone to putting a goto in the wrong place. What happened with the security framework was probably a copy paste error, and the extra goto got added. The unfortunate part about this is that it wasn’t caught. XCode’s static analyser can usually catch deadcode, but with the default warnings, it won&#39;t catch this. What’s worse than that is there a simple regression test would have caught that, and if it was in place, this all could have been avoided.</p>
+
+<blockquote>
+<p>What have we learned from this?</p>
+</blockquote>
+
+<p>The moral of the story kids is that testing is important, because simple mistakes like duplicate lines don’t always throw compiler warnings or failed build. They can alter behavior in a way that leave you open down the road.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://s.gravatar.com/avatar/86fd22cac0b6714252b9246cd5e03e0a?s=200" class="bio-photo" alt="Michael bio photo"></a>
+<h3>Michael</h3>
+<p>A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community. I also really love coffee.</p>
+<a href="http://twitter.com/7imbrook" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+
+<a href="http://instagram.com/7imbrook" class="author-social" target="_blank"><i class="icon-instagram"></i> Instagram</a>
+<a href="http://github.com/7imbrook" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+        </div>
+        <p class="byline"><strong>How simple a bug can be.</strong> was published on <time datetime="2014-02-22T00:00:00-05:00">February 22, 2014</time> by <a href="/about" title="About Michael">Michael</a>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/Upcoming_talk/" title="Upcoming [ Objective-C ] Talk">Upcoming [ Objective-C ] Talk</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/C_Block_Eval/" title="C Block Evaluation">C Block Evaluation</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="/articles/Welcome-to-my-site/" title="Welcome to my blog">Welcome to my blog</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2014 Michael. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-37560133-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>
