@@ -1,6 +1,6 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
+description: "A love for Objective-C this is a place where I talk about why Objective-C is awesome and add my contibutions to the community. I also really love coffee."
 tags: [Jekyll, theme, responsive, blog, template]
 image:
   feature: cover.jpg
