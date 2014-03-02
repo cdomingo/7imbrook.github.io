@@ -16,3 +16,6 @@ In about a month I will be giving a talk on [ Objective-c ] for the [Society of 
 
 ###### Updated 10:26 PM Feb 18 2014:
 I've decided on a title for my talk. (See cover)
+
+###### Updated 4:59 PM March 2 2014:
+Now that there are comments, please post some ideas down there.
