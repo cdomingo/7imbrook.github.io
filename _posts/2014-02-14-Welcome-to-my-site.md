@@ -4,6 +4,7 @@ title: "Welcome to my blog"
 tagline: ""
 description: "As an avid objective-c developer I have become accustomed to the ways of the smalltalk style object system and the power of the runtime."
 category: articles
+comments: false
 tags: [welcome]
 image:
   feature: texture-feature-04.jpg

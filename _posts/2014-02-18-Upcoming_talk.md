@@ -4,6 +4,7 @@ title: "Upcoming [ Objective-C ] Talk"
 tagline: ""
 description: "In about a month I will be giving a talk on Objective-c for the Society of Software Engineers."
 category: articles
+comments: true
 tags: [talk, objective-c, events]
 image:
   feature: objective-c.png

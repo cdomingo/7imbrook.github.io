@@ -5,6 +5,7 @@ tagline: ""
 description: "Apple recently released a security patch that raised some concerns. What was it and what does this mean for you."
 category: articles
 tags: [bug, apple, ssl, security]
+comments: true
 image:
   feature: cover_secuity.jpg
   credit: Michael Timbrook | Apple Inc

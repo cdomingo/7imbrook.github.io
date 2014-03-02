@@ -1,6 +1,7 @@
 title:            7imbrook
 tagline:          Objective-c Lover
 description:      Where I talk about why objective-c is awesome and add my contibutions to the community.
+site-url:         timbrook.im
 
 # Owner/author information
 owner:
@@ -38,6 +39,9 @@ timezone:    America/New_York
 future:      true
 pygments:    true
 markdown:    redcarpet
+
+disque:
+    shortname: timbrook
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
