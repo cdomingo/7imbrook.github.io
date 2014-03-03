@@ -9,7 +9,7 @@ comments: true
 image:
   feature: cover_secuity.jpg
   credit: Michael Timbrook | Apple Inc
-  creditlink: http://timbrook.im
+  creditlink: http://instacod.es/87901
 ---
 ```cpp
 goto fail;
